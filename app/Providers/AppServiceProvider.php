@@ -28,5 +28,21 @@ class AppServiceProvider extends ServiceProvider
         Passport::useClientModel(Client::class);
         Passport::enablePasswordGrant();
         Passport::enableImplicitGrant();
+
+        Passport::tokensCan([
+            // Api Transactions -----------------------------------
+            'panel.transaction.index'   => 'Lista de Transações',
+            'api.transaction.index'     => 'Lista de Transações',
+            'api.transaction.store'     => 'Inserir Transação',
+            'api.transaction.show'      => 'Visualizar um transação',
+            'api.transaction.update'    => 'Editar Transação',
+            'api.transaction.destroy'   => 'Deletar Transação',
+            'api.transaction.datatable' => 'Tabela Transação',
+        ]);
+
+        /* Passport::setDefaultScope([
+             'teste1',
+             'teste2',
+         ]);*/
     }
 }
