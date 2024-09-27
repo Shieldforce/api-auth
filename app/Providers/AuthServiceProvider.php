@@ -11,9 +11,6 @@ class AuthServiceProvider extends ServiceProvider
         // polices ---
     ];
 
-    /**
-     * Bootstrap services.
-     */
     public function boot(): void
     {
         $this->registerPolicies();
